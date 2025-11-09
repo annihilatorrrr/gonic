@@ -344,7 +344,7 @@ func (s *Scanner) scanDir(st *State, absPath string) error {
 			return fmt.Errorf("get times %q: %w", basename, err)
 		}
 
-		// might be nil if new track
+		// track might be nil if new track
 		track := trackMap[basename]
 
 		if st.isFull || track == nil || timeSpec.ModTime().After(track.UpdatedAt) {
